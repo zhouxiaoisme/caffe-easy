@@ -6,6 +6,9 @@
 *.lo
 *.o
 *.obj
+*.suo
+*.sdf
+*.opensdf
 
 # Precompiled Headers
 *.gch
@@ -30,3 +33,10 @@
 *.exe
 *.out
 *.app
+
+Build/*
+packageRelease/*
+
+# don't ignore this folders' files
+!3rd/*
+
