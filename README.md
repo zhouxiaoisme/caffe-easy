@@ -6,7 +6,7 @@
 - 依賴的第三方庫，如：protobuf, gflags, boost, openblas, opencv2.4.10, Imdb, glog等放在caffe-easy/3rd目錄下
 
 # window-cpu/jlXCaffeModelConverter
-- caffemodel convert to xcaffemodel (a custom caffemodel format) tool
+- caffemodel convert to xcaffemodel (a custom caffemodel format) tool.  (compiled with vc2013 and run in windows OS)
 
 # window-cpu/haLstmPlateOcr_test
-- plate OCR dl inference testre
+- plate OCR DL inference tester (compiled with vc2013 and run in windows OS)
