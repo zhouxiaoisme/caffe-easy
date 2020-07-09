@@ -166,7 +166,7 @@ int convert_caffemodel_to_xcaffemodel(string caffemodel, string xcaffemodel){
                 //write blobs dimension
                 for (int k = 0; k < num_dim; k++){
                     int dim = (int)proto.shape().dim(k);
-                    dstr += to_string(dim);
+                    dstr += to_string(dim) + (k < (num_dim - 1) ? "," : "");
                     out.write(reinterpret_cast<char *>(&dim), sizeof(int));
                 }
             }
@@ -195,14 +195,15 @@ int main(){
     // string caffemodelfile = "E:\\BaiduYunDownload\\roadmonitor_yolov3.caffemodel";
     // string xcaffemodelfile = "e:\\BaiduYunDownload\\roadmonitor_yolov3.xcaffemodel";
 
+    // string caffemodelfile = "H:\\nvidiawork\\jlVehicleRecog_deployModels\\models4Deploy\\0609_hj_triangle_model\\trimark.caffemodel";
+    // string xcaffemodelfile = "H:\\nvidiawork\\jlVehicleRecog_deployModels\\models4Deploy\\0609_hj_triangle_model\\trimark.xcaffemodel";
+
     // string caffemodelfile = "H:\\nvidiawork\\jlVehicleRecog_deployModels\\models4Deploy\\0405_pct\\iter_38000_model.ckpt.discardpnod.ckpt.converted.caffemodel";
-    // string xcaffemodelfile = "H:\\nvidiawork\\jlVehicleRecog_deployModels\\models4Deploy\\0405_pct\\iter_38000_model.xcaffemodel";
+    // string xcaffemodelfile = "H:\\nvidiawork\\jlVehicleRecog_deployModels\\models4Deploy\\0405_pct\\pct.xcaffemodel";
+    string caffemodelfile = "H:\\nvidiawork\\jlVehicleRecog_deployModels\\models4Deploy\\0405_pnod\\iter_12000_model.ckpt.discardlayer4.ckpt.converted.caffemodel";
+    string xcaffemodelfile = "H:\\nvidiawork\\jlVehicleRecog_deployModels\\models4Deploy\\0405_pnod\\pnod.xcaffemodel";
 
-    // string caffemodelfile = "H:\\nvidiawork\\jlVehicleRecog_deployModels\\models4Deploy\\0405_pnod\\iter_12000_model.ckpt.discardlayer4.ckpt.converted.caffemodel";
-    // string xcaffemodelfile = "H:\\nvidiawork\\jlVehicleRecog_deployModels\\models4Deploy\\0405_pnod\\iter_12000_model.xcaffemodel";
 
-    string caffemodelfile = "H:\\nvidiawork\\jlVehicleRecog_deployModels\\models4Deploy\\0609_hj_triangle_model\\trimark.caffemodel";
-    string xcaffemodelfile = "H:\\nvidiawork\\jlVehicleRecog_deployModels\\models4Deploy\\0609_hj_triangle_model\\trimark.xcaffemodel";
     convert_caffemodel_to_xcaffemodel(caffemodelfile, xcaffemodelfile);
     return 0;
 
